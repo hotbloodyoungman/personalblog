@@ -1,0 +1,13 @@
+title: Snow's blog
+author: Sihan Li
+email: sihan.li@welho.me
+description: > # this means to ignore newlines until "baseurl:"
+  Snow's personal site of coding learning.
+# social links
+juejin_username: 传达室老大爷 # DO NOT include the @ character, or else the build will fail!
+github_username:  hotbloodyoungman # DO NOT include the @ character, or else the build will fail!
+
+show_excerpts: true # set to false to remove excerpts on the homepage
+
+#add theme
+theme: minima
