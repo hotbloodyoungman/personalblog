@@ -1,0 +1,83 @@
+---
+title: "Create-blog-by-Github-Page"
+date: 2021-7-26
+---
+
+搭建一个非常简易的博客，用时10-15分钟即可，不需要会编程。
+
+一共5步：
+
+1. 首先要创建一个repo，命名随意
+  
+2. 激活该repo的GitHub Pages 📖. 这样Github就可以从你的主干中获取博客内容，并用你的仓库名发布页面。Under your repository name, click Settings. In the "GitHub Pages" section, in the Source drop-down, select main branch.
+
+![pages](https://user-images.githubusercontent.com/76157254/126941246-a0a0c43d-7c90-449a-8c12-32735e07bc21.png)
+
+3. 创建首页:
+* You can customize your homepage by adding content to either an index file or the README.md file. 
+* GitHub Pages first looks for an index file. If an index file is found, GitHub Pages uses the content in the file to create the homepage. 
+* If an index file isn’t found, it uses the README.md to create the homepage.
+
+index文件扩展性更强，md文件更简单，建议新人使用readme.md来定义首页。
+
+以下是我的博客首页文件内容，供参考：
+
+    ---
+    title: "Welcome to my blog"
+    ---
+
+    I'm glad you are here. I plan to talk about ...
+    my learning of coding!
+    my name is Sihan Li
+    I'm new comer of github
+
+4. 配置博客，GitHub使用Jekyll来生成博客页面，下面是Jekyll的简介：
+>Jekyll is a simple, blog-aware, static site generator perfect for personal, project, or organization sites. Think of it like a file-based CMS, without all the complexity. Jekyll takes your content, renders Markdown and Liquid templates, and spits out a complete, static website ready to be served by Apache, Nginx or another web server. Jekyll is the engine behind GitHub Pages, which you can use to host sites right from your GitHub repositories.
+
+Jekyll使用_config.yml文件来存储站点设置，包括：theme, and reusable content like your site title and GitHub handle. 
+
+以下是我的_config.yml文件内容，供参考，我这里设置的主题是minima，是GitHub默认的主题
+    
+    title: Snow's blog
+    author: Sihan Li
+    email: sihan.li@welho.me
+    description: > # this means to ignore newlines until "baseurl:"
+	  Write an awesome description for your new site here. You can edit this
+	  line in _config.yml. It will appear in your document head meta (for
+	  Google search results) and in your feed.xml site description.
+	# social links
+	juejin_username: 传达室老大爷 # DO NOT include the @ character, or else the build will fail!
+	github_username:  hotbloodyoungman # DO NOT include the @ character, or else the build will fail!
+	show_excerpts: true # set to false to remove excerpts on the homepage
+	#add theme
+	theme: minima
+
+5. 添加博客内容，创建文件_posts/YYYY-MM-DD-title.md 其中“_post” 是博客内容的目录，Jykell会自动读取里面的文件，注意文件名格式要规范，title是多个单词的，使用横线-链接
+
+打开文件，加上一些描述性的元数据，以下是我博客第一篇文章的内容，供参考：
+
+    ---
+		title: "Welcome to my blog"
+		date: 2019-01-20
+		---
+这是最基本的标题和创建时间，还可以加上layouts, categories, 具体参见：https://jekyllrb.com/docs/frontmatter/
+
+6. 到这里，你就可以通过setting中的pages来查看自己的博客了！如果你觉得GitHub的域名不够逼格的话，还可以指定自己的私人域名：
+还是在pages设置里面，往下拉至custom domain，输入自己的域名后，默认是 http 协议访问，其实我们可以配置 https 协议（更安全和专业）。大家注意上图 Enforce HTTPS 的内容，这个 Enforce HTTPS 的按钮就是强制 https 访问的意思。刚刚配置私有域名后，因为 github 在帮忙申请证书Enforce HTTPS 可能不能勾选
+![image](https://user-images.githubusercontent.com/76157254/126944902-dec5f536-796e-42fc-b468-5be0ea285168.png)
+
+7. 配置域名解析CNAME，配置域名解析需要在购买域名的管理平台进行操作。我的域名在阿里云上，这是我的设置方式：
+
+![image](https://user-images.githubusercontent.com/76157254/126945072-41101f12-cbe5-4a9d-8c2d-d449432fb859.png)
+
+主机记录值是我们上一步在 github 中配置的 blog.huaxiangxiaobao.com（二者必须一致）
+
+记录值则是我们的repository名称hotbloodyoungman.github.io.
+
+
+参考资料：
+
+>搭建免费的个人博客（一）——简单静态页面型  https://jingwei.link/2019/08/25/free-static-blog.html  
+
+>First Week on GitHub  https://lab.github.com/githubtraining/first-week-on-github
+
