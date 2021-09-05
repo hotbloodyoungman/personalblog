@@ -1,4 +1,3 @@
-
 ---
 title: "PHP类的秘密(六) static, $this, self, parent和后期静态绑定"
 date: 2021-09-05
