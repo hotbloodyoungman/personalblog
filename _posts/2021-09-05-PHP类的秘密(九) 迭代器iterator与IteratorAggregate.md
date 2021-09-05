@@ -4,8 +4,6 @@ date: 2021-09-05
 ---
 
 
-# 迭代器iterator与IteratorAggregate
-
 这章的内容本来是想和上一篇<对象的秘密>一起讲, 不过碍于篇幅太长, 还是单独开一篇专门总结一下.
 
 ## foreach
